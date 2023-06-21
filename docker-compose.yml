@@ -1,0 +1,61 @@
+version: '3.9'
+services: 
+
+  #Back
+  php: 
+    build: 
+      context: ./dockerfiles
+      dockerfile: ./php.dockerfile
+    container_name: php-moviestar
+    working_dir: /var/www/html/
+    depends_on:
+      - mysql
+    networks: 
+      - moviestar
+    ports:
+      - "8085:80"
+    volumes:
+      - "./back/:/var/www/html/"
+    environment: 
+      MYSQL_HOST: mysql
+      MYSQL_DATABASE: db_moviestar
+      MYSQL_PASSWORD: user
+      MYSQL_USER: user
+
+  #Database
+  mysql:
+    image: mysql:8.0
+    container_name: db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: db_moviestar
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: user
+      MYSQL_USER: user
+    volumes:
+      - "./db:/home/bkp"
+      - "mysql_moviestar:/var/lib/mysql"
+    networks:
+      - moviestar    
+
+  #PhpMyAdmin
+  dbadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: "no"
+    container_name: phpmyadmin
+    ports:
+      - "4033:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    networks:
+      - moviestar  
+
+volumes:
+  mysql_moviestar:
+    driver: "local"
+
+networks:
+  moviestar:
+    driver: bridge
