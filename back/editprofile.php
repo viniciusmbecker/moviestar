@@ -6,13 +6,10 @@
 
     $userData = $userDao->verifyToken(true);
 
-    echo $BASE_URL;
 ?>
-
     <div id="main-container" class="container-fluid">
         <h1>Editar perfil</h1>
     </div>
- 
 <?php
     require_once("templates/footer.php");
 ?>    
