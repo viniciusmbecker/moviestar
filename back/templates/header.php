@@ -36,6 +36,7 @@
     <!-- CSS do projeto -->
     <link rel="stylesheet" href="<?php $BASE_URL ?>css/styles.css">
     <link rel="stylesheet" href="<?php $BASE_URL ?>css/auth.css">
+    <link rel="stylesheet" href="<?php $BASE_URL ?>css/editprofile.css">
 </head>
 <body>
     <header>

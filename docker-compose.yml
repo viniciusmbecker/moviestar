@@ -2,25 +2,25 @@ version: '3.9'
 services: 
 
   #Back
-  php: 
-    build: 
-      context: ./dockerfiles
-      dockerfile: ./php.dockerfile
-    container_name: php-moviestar
-    working_dir: /var/www/html/
-    depends_on:
-      - mysql
-    networks: 
-      - moviestar
-    ports:
-      - "8085:80"
-    volumes:
-      - "./back/:/var/www/html/"
-    environment: 
-      MYSQL_HOST: mysql
-      MYSQL_DATABASE: db_moviestar
-      MYSQL_PASSWORD: user
-      MYSQL_USER: user
+  # php: 
+  #   build: 
+  #     context: ./dockerfiles
+  #     dockerfile: ./php.dockerfile
+  #   container_name: php-moviestar
+  #   working_dir: /var/www/html/
+  #   depends_on:
+  #     - mysql
+  #   networks: 
+  #     - moviestar
+  #   ports:
+  #     - "8085:80"
+  #   volumes:
+  #     - "./back/:/var/www/html/"
+  #   environment: 
+  #     MYSQL_HOST: mysql
+  #     MYSQL_DATABASE: db_moviestar
+  #     MYSQL_PASSWORD: user
+  #     MYSQL_USER: user
 
   #Database
   mysql:
