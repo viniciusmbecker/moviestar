@@ -45,12 +45,12 @@
             if (in_array($image["type"], $imageTypes)) {
 
                 // Checagem se jpg
-                if (in_array($image, $jpgArray)) {
+                if (in_array($image["type"], $jpgArray)) {
                     
                     $imageFile = imagecreatefromjpeg($image["tmp_name"]);
 
                 // Imagem é png    
-                } elseif (in_array($image, $pngArray)) {
+                } elseif (in_array($image["type"], $pngArray)) {
                     
                     $imageFile = imagecreatefrompng($image["tmp_name"]);
                     
@@ -60,6 +60,7 @@
 
                 }
 
+                // Gera o nome da imagem
                 $imageName = $user->imageGenerateName();
 
                 imagejpeg($imageFile, "./img/users/" . $imageName, 100);
