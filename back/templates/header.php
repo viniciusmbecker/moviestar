@@ -38,6 +38,8 @@
     <link rel="stylesheet" href="<?php $BASE_URL ?>css/auth.css">
     <link rel="stylesheet" href="<?php $BASE_URL ?>css/editprofile.css">
     <link rel="stylesheet" href="<?php $BASE_URL ?>css/newmovie.css">
+    <link rel="stylesheet" href="<?php $BASE_URL ?>css/dashboard.css">
+    <link rel="stylesheet" href="<?php $BASE_URL ?>css/movie.css">
 </head>
 <body>
     <header>
