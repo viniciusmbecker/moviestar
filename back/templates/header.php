@@ -40,11 +40,12 @@
     <link rel="stylesheet" href="<?php $BASE_URL ?>css/newmovie.css">
     <link rel="stylesheet" href="<?php $BASE_URL ?>css/dashboard.css">
     <link rel="stylesheet" href="<?php $BASE_URL ?>css/movie.css">
+    <link rel="stylesheet" href="<?php $BASE_URL ?>css/profile.css">
 </head>
 <body>
     <header>
         <nav id="main-navbar" class="navbar navbar-expand-lg">
-            <a href="<?PHP $BASE_URL ?>" class="navbar-brand">
+            <a href="<?= $BASE_URL ?>" class="navbar-brand">
                 <img src="<?PHP $BASE_URL ?>img/logo.svg" alt="" id="logo">
                 <span id="moviestar-title">MovieStar</span>
             </a>   
